@@ -7,6 +7,12 @@ import scrapy
 
 
 class SteamspiderItem(scrapy.Item):
-    # define the fields for your item here like:
-    # name = scrapy.Field()
-    pass
+    name = scrapy.Field()
+    categorie = scrapy.Field()
+    reviews_count = scrapy.Field()
+    rating = scrapy.Field()
+    publish_date = scrapy.Field()
+    developer = scrapy.Field()
+    tags = scrapy.Field()
+    price = scrapy.Field()
+    platforms = scrapy.Field()
