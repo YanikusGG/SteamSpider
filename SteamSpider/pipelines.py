@@ -17,7 +17,7 @@ class SteamspiderPipeline:
         self.file.close()
 
     def process_item(self, item, spider):
-        if int(item["publish_date"][-4:]) > 2000:
-            line = json.dumps(ItemAdapter(item).asdict()) + "\n"
+        if item['publish_date'] and '0' <= item['publish_date'][-1] <= '9' and int(item['publish_date'][-4:]) > 2000:
+            line = json.dumps(ItemAdapter(item).asdict()) + '\n'
             self.file.write(line)
         return item
